@@ -36,10 +36,11 @@ def test_proxy(proxy):
         print('无效')
         pass
 
+
 # 多线程
 data = get_proxy()
 executor = ThreadPoolExecutor(max_workers=2)
 for proxy in data:
-    all_task = [executor.submit(test_proxy, (proxy))]
+    all_task = [executor.submit(test_proxy, proxy)]
 
 

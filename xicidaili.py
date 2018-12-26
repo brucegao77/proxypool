@@ -6,7 +6,8 @@ from pymongo import MongoClient
 
 client = MongoClient(host="127.0.0.1", port=27017)
 db = client['proxypool']
-collection = db['test']
+collection = db['proxies']
+
 
 # 爬取西刺代理
 def get_proxy():
@@ -15,49 +16,57 @@ def get_proxy():
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6788.400 QQBrowser/10.3.2864.400',
         'referer': 'https://www.xicidaili.com/'
     }
-    proxies = {
-        'https': 'https://217.19.209.253:8080'
-    }
-    for i in range(1, 5):
+    # ip = {
+    #     'https': "https://119.101.112.176:9999"
+    # }
+
+    for i in range(1, 2):
         url = 'https://www.xicidaili.com/nn/{}'.format(i)
-        res = requests.get(url, headers=headers, proxies=proxies, timeout=5)
-        print(res.status_code)
-        data = etree.HTML(res.text)
+        r = requests.get(url, headers=headers)
+        print(r.status_code)
+        s = etree.HTML(r.text)
         time.sleep(2)
 
-        contents = data.xpath('//tr[@class]')  # 去掉标题行
+        contents = s.xpath('//tr[@class]')  # 去掉标题行
         for content in contents:
             ip = content.xpath('./td[2]/text()')[0]
             port = content.xpath('./td[3]/text()')[0]
-            type = content.xpath('./td[6]/text()')[0]
-            proxy = '{0}://{1}:{2}'.format(type, ip, port)
-            print(proxy)
+            scheme = content.xpath('./td[6]/text()')[0]
+            print(ip, port, scheme)
+            proxy = {
+                'ip_port': '{0}:{1}'.format(ip, port),
+                'scheme': scheme
+            }
             data.append(proxy)
     return data
 
+
 # 验证proxy的可用性并存入数据库
 def test_proxy(proxy):
+    ip_port = proxy['ip_port']
+    scheme = proxy['scheme']
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6788.400 QQBrowser/10.3.2864.400'
     }
     ip = {
-        "https": "https://" + proxy
+        scheme: "{}://".format(scheme) + ip_port
     }
     try:
-        res = requests.get('https://www.baidu.com/', headers=headers, proxies=ip, timeout=5)
+        res = requests.get('{}://httpbin.org/ip'.format(scheme), headers=headers, proxies=ip, timeout=5)
         if res.status_code == 200:
             items = {
-                'proxies': "https://" + proxy
+                'proxy': scheme + '://' + ip_port
             }
             collection.insert(items)
-            print('有效', proxy)
+            print('有效', ip_port)
     except:
         print('无效')
         pass
 
+
 # 多线程
 data = get_proxy()
-print(data)
+print('======= 爬取结束  开始验证 =======')
 executor = ThreadPoolExecutor(max_workers=2)
 for proxy in data:
-    all_task = [executor.submit(test_proxy, (proxy))]
+    all_task = [executor.submit(test_proxy, proxy)]
