@@ -38,7 +38,7 @@ def get_proxy():
 # 验证proxy的可用性并存入数据库
 def test_proxy(proxy):
     headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux i686; U;) Gecko/20070322 Kazehakase/0.4.5'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6788.400 QQBrowser/10.3.2864.400'
     }
     ip = {
         "https": "https://" + proxy
