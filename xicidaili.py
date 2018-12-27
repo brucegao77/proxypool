@@ -6,7 +6,7 @@ from pymongo import MongoClient
 
 client = MongoClient(host="127.0.0.1", port=27017)
 db = client['proxypool']
-collection = db['proxies']
+collection = db['testxici']
 
 
 # 爬取西刺代理
@@ -16,14 +16,14 @@ def get_proxy():
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6788.400 QQBrowser/10.3.2864.400',
         'referer': 'https://www.xicidaili.com/'
     }
-    # ip = {
-    #     'https': "https://27.29.73.146:9999"
-    # }
+    ip = {
+        'https': "https://41.188.149.42:8080"
+    }
 
-    for i in range(1, 2):
+    for i in range(20, 25):
         url = 'https://www.xicidaili.com/nn/{}'.format(i)
-        r = requests.get(url, headers=headers)
-        print(r.status_code)
+        r = requests.get(url, headers=headers, proxies=ip)
+        print(r.text)
         s = etree.HTML(r.text)
         time.sleep(2)
 

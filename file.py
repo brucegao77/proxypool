@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 client = MongoClient(host="127.0.0.1", port=27017)
 db = client['proxypool']
-collection = db['test']
+collection = db['test2']
 
 
 # 从提取文件中导入proxies
@@ -39,7 +39,7 @@ def test_proxy(proxy):
 
 # 多线程
 data = get_proxy()
-executor = ThreadPoolExecutor(max_workers=2)
+executor = ThreadPoolExecutor(max_workers=1)
 for proxy in data:
     all_task = [executor.submit(test_proxy, proxy)]
 
