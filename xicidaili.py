@@ -17,7 +17,7 @@ def get_proxy():
         'referer': 'https://www.xicidaili.com/'
     }
     # ip = {
-    #     'https': "https://119.101.112.176:9999"
+    #     'https': "https://27.29.73.146:9999"
     # }
 
     for i in range(1, 2):
