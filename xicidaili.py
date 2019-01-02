@@ -6,8 +6,7 @@ from pymongo import MongoClient
 
 client = MongoClient(host="127.0.0.1", port=27017)
 db = client['proxypool']
-collection = db['testxici']
-
+collection = db['runoob6']
 
 # 爬取西刺代理
 def get_proxy():
@@ -16,14 +15,10 @@ def get_proxy():
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6788.400 QQBrowser/10.3.2864.400',
         'referer': 'https://www.xicidaili.com/'
     }
-    ip = {
-        'https': "https://41.188.149.42:8080"
-    }
 
-    for i in range(20, 25):
+    for i in range(1, 5):
         url = 'https://www.xicidaili.com/nn/{}'.format(i)
-        r = requests.get(url, headers=headers, proxies=ip)
-        print(r.text)
+        r = requests.get(url, headers=headers)
         s = etree.HTML(r.text)
         time.sleep(2)
 
@@ -49,13 +44,14 @@ def test_proxy(proxy):
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6788.400 QQBrowser/10.3.2864.400'
     }
     ip = {
-        scheme: "{}://".format(scheme) + ip_port
+        'http': "{}://".format(scheme) + ip_port
     }
     try:
-        res = requests.get('{}://httpbin.org/ip'.format(scheme), headers=headers, proxies=ip, timeout=5)
+        res = requests.get('http://www.runoob.com/', headers=headers, proxies=ip, timeout=5)
         if res.status_code == 200:
+            print(res.content)
             items = {
-                'proxy': scheme + '://' + ip_port
+                'proxy': "{}://".format(scheme) + ip_port
             }
             collection.insert(items)
             print('有效', ip_port)
@@ -67,6 +63,7 @@ def test_proxy(proxy):
 # 多线程
 data = get_proxy()
 print('======= 爬取结束  开始验证 =======')
-executor = ThreadPoolExecutor(max_workers=2)
+executor = ThreadPoolExecutor(max_workers=10)
 for proxy in data:
+    time.sleep(2)
     all_task = [executor.submit(test_proxy, proxy)]
