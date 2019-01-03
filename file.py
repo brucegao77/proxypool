@@ -23,10 +23,10 @@ def test_proxy(proxy):
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6788.400 QQBrowser/10.3.2864.400'
     }
     ip = {
-        "http": "http://" + proxy
+        "http": "http://" + proxy  # 根据目标网址的协议修改
     }
     try:
-        res = requests.get('http://www.runoob.com/', headers=headers, proxies=ip, timeout=5)
+        res = requests.get('目标网址', headers=headers, proxies=ip, timeout=5)
         if res.status_code == 200:
             items = {
                 'proxy': proxy
