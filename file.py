@@ -4,8 +4,8 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 
 client = MongoClient(host="127.0.0.1", port=27017)
-db = client['test']
-collection = db['proxypool']
+db = client['proxypool']
+collection = db['leshe']
 
 
 # 从提取文件中导入proxies
@@ -26,7 +26,7 @@ def test_proxy(proxy):
         "https": "https://" + proxy  # 根据目标网址的协议修改
     }
     try:
-        res = requests.get('https://brucegao.cn', headers=headers, proxies=ip, timeout=5)
+        res = requests.get('https://www.leshe.us/', headers=headers, proxies=ip, timeout=5)
         if res.status_code == 200:
             items = {
                 'proxy': proxy
@@ -40,7 +40,7 @@ def test_proxy(proxy):
 
 # 多线程
 data = get_proxy()
-executor = ThreadPoolExecutor(max_workers=10)
+executor = ThreadPoolExecutor(max_workers=2)
 for proxy in data:
     time.sleep(2)
     all_task = [executor.submit(test_proxy, proxy)]

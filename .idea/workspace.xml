@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f3f5116f-71cf-442f-820d-7039d1696764" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file.py" beforeDir="false" afterPath="$PROJECT_DIR$/file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proxies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proxies.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/proxypool$douban250.coverage" NAME="douban250 Coverage Results" MODIFIED="1545869979682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../pythonpractice" />
-    <SUITE FILE_PATH="coverage/proxypool$file.coverage" NAME="file Coverage Results" MODIFIED="1547133552327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/proxypool$file.coverage" NAME="file Coverage Results" MODIFIED="1547262752620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proxypool$xicidaili.coverage" NAME="xicidaili Coverage Results" MODIFIED="1546482078118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/proxypool$update.coverage" NAME="update Coverage Results" MODIFIED="1545873461830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -21,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+            <state relative-caret-position="418">
+              <caret line="28" column="49" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="49" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -53,8 +55,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="363" />
-    <option name="y" value="127" />
+    <option name="x" value="182" />
+    <option name="y" value="217" />
     <option name="width" value="995" />
     <option name="height" value="774" />
   </component>
@@ -227,6 +229,9 @@
       <workItem from="1547127709275" duration="1587000" />
       <workItem from="1547133410950" duration="257000" />
       <workItem from="1547133693750" duration="39000" />
+      <workItem from="1547203215323" duration="21000" />
+      <workItem from="1547262458167" duration="450000" />
+      <workItem from="1547262952469" duration="208000" />
     </task>
     <task id="LOCAL-00001" summary="目标网站更改">
       <created>1547133449710</created>
@@ -246,18 +251,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36958000" />
+    <option name="totallyTimeSpent" value="37637000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="363" y="127" width="995" height="774" extended-state="0" />
+    <frame x="182" y="217" width="995" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19251336" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2053476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.596875" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5515625" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -271,7 +276,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32941177" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Mongo Explorer" order="5" />
     </layout>
@@ -327,8 +332,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        <state relative-caret-position="418">
+          <caret line="28" column="49" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="49" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
