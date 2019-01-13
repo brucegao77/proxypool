@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 
 client = MongoClient(host="127.0.0.1", port=27017)
-db = client['proxypool']
+db = client['actress']
 collection = db['leshe']
 
 
@@ -26,7 +26,7 @@ def test_proxy(proxy):
         "https": "https://" + proxy  # 根据目标网址的协议修改
     }
     try:
-        res = requests.get('https://www.leshe.us/', headers=headers, proxies=ip, timeout=5)
+        res = requests.get('https://www.nrenvip.com/', headers=headers, proxies=ip, timeout=5)
         if res.status_code == 200:
             items = {
                 'proxy': proxy
