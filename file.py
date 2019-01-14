@@ -5,7 +5,7 @@ import time
 
 client = MongoClient(host="127.0.0.1", port=27017)
 db = client['actress']
-collection = db['leshe']
+collection = db['proxypool']
 
 
 # 从提取文件中导入proxies
@@ -40,9 +40,9 @@ def test_proxy(proxy):
 
 # 多线程
 data = get_proxy()
-executor = ThreadPoolExecutor(max_workers=2)
+executor = ThreadPoolExecutor(max_workers=20)
 for proxy in data:
-    time.sleep(2)
+    # time.sleep(2)
     all_task = [executor.submit(test_proxy, proxy)]
 
 
