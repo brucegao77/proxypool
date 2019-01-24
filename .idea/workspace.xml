@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3f5116f-71cf-442f-820d-7039d1696764" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f3f5116f-71cf-442f-820d-7039d1696764" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="18">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -234,6 +232,7 @@
       <workItem from="1547378816866" duration="340000" />
       <workItem from="1547379197025" duration="14000" />
       <workItem from="1548330599376" duration="1100000" />
+      <workItem from="1548343270048" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="目标网站更改">
       <created>1547133449710</created>
@@ -256,11 +255,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548331687060</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="配置文件">
+      <created>1548343295142</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1548343295142</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39432000" />
+    <option name="totallyTimeSpent" value="39460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="80" y="176" width="1097" height="774" extended-state="0" />
@@ -285,7 +291,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.34509057" />
+      <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.35271686" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32941177" />
       <window_info anchor="right" id="Database" order="5" />
     </layout>
@@ -297,7 +303,8 @@
     <MESSAGE value="目标网站更改" />
     <MESSAGE value="测试自己的网站" />
     <MESSAGE value="更改目标网址" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改目标网址" />
+    <MESSAGE value="配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="配置文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../pythonpractice/xiaozhu.py" />
@@ -326,8 +333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-55">
-          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="18">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
