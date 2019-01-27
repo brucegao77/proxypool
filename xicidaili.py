@@ -16,7 +16,7 @@ def get_proxy():
         'referer': 'https://www.xicidaili.com/'
     }
 
-    for i in range(1, 5):
+    for i in range(1, 21):
         url = 'https://www.xicidaili.com/nn/{}'.format(i)
         r = requests.get(url, headers=headers)
         s = etree.HTML(r.text)
@@ -47,7 +47,7 @@ def test_proxy(proxy):
         'http': "{}://".format(scheme) + ip_port
     }
     try:
-        res = requests.get('http://www.runoob.com/', headers=headers, proxies=ip, timeout=5)
+        res = requests.get('', headers=headers, proxies=ip, timeout=5)
         if res.status_code == 200:
             print(res.content)
             items = {
@@ -63,7 +63,7 @@ def test_proxy(proxy):
 # 多线程
 data = get_proxy()
 print('======= 爬取结束  开始验证 =======')
-executor = ThreadPoolExecutor(max_workers=10)
+executor = ThreadPoolExecutor(max_workers=16)
 for proxy in data:
     time.sleep(2)
     all_task = [executor.submit(test_proxy, proxy)]
