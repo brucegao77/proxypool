@@ -45,7 +45,7 @@ def test_proxy(proxy):
 
 # 多线程
 data = get_proxy()
-executor = ThreadPoolExecutor(max_workers=16)
+executor = ThreadPoolExecutor(max_workers=32)
 for proxy in data:
     # time.sleep(2)
     all_task = [executor.submit(test_proxy, proxy)]
