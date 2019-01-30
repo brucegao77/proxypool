@@ -40,12 +40,11 @@ def test_proxy(proxy):
     items = {
         'proxy': proxy
     }
-    collection.insert(items)
 
 
 # 多线程
 data = get_proxy()
-executor = ThreadPoolExecutor(max_workers=32)
+executor = ThreadPoolExecutor(max_workers=8)
 for proxy in data:
     # time.sleep(2)
     all_task = [executor.submit(test_proxy, proxy)]
